@@ -72,8 +72,6 @@ public class CustomerResource extends Customer{
     @RequestMapping("/")
     public ModelAndView HTML(){
         ModelAndView html = new ModelAndView();
-//        ModelAndView css = new ModelAndView();
-//        css.setViewName("Test.css");
         html.setViewName("Test.html" );
         return html;
     }
