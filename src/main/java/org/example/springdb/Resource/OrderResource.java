@@ -28,7 +28,7 @@ public class OrderResource extends CustomerOrders {
     ResponseEntity<List<OrderDTO>> fetchOrders(@PathVariable long customer_id) {
         return ResponseEntity.ok(orderService.getOrderByCustomerId(customer_id));
     }
-    @RequestMapping(path ="/ubdate", method = RequestMethod.POST)
+    @RequestMapping(path ="/update", method = RequestMethod.POST)
     ResponseEntity<?> addOrder(@RequestBody CustomerOrders order) {
         return ResponseEntity.ok(orderService.updateOrder(order));
     }
