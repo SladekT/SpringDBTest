@@ -1,27 +1,17 @@
 package org.example.springdb.Resource;
 
 
-import jakarta.transaction.Transactional;
-import jakarta.ws.rs.Produces;
 import org.example.springdb.DAO.CustomerRepository;
 import org.example.springdb.DTO.CustomerDTO;
 import org.example.springdb.DTO.LoginDTO;
 import org.example.springdb.Model.Customer;
-import org.example.springdb.Model.CustomerLogin;
 import org.example.springdb.Service.CustomerService;
-import org.example.springdb.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.jms.JmsProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.swing.text.html.HTMLDocument;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
