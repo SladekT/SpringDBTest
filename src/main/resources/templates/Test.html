@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="src/main/resources/templates/Test.css">
+</head>
+<style>
+    body{
+        background: #100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10vh;
+    }
+    .container {
+        color: white;
+        position: relative;
+        font-family: sans-serif;
+    }
+   .container::before,
+    .container::after{
+       content: "";
+       background-color: #444;
+       position: absolute;
+       transition: all .1s ease;
+    }
+    .container:hover.container::before{
+        background-color: rgba(131, 9, 9, 0.91) !important;
+    }
+
+    .container::before {
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+        top: 30%;
+        right: 7%;
+        transition: all ease 0.3s;
+
+    }
+
+    .container::after {
+        content: "";
+        position: absolute;
+        height: 3rem;
+        top: 8%;
+        right: 5%;
+        transition: all ease 0.3s;
+        border: 1px solid;
+
+    }
+    .container:hover.container::after {
+        background: #640000;
+        border: 1px dotted rgb(227, 79, 79)
+    }
+    .container .box {
+        width: 60vw;
+        height: 50vh;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.074);
+        border: 1px solid rgba(255, 255, 255, 0.222);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border-radius: 0.7rem;
+        transition: all ease 0.3s;
+    }
+
+    .container .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .container .box .title {
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+    }
+
+    .container .box div strong {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .container .box div p {
+        margin: 0;
+        font-size: 0.9em;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+    }
+
+    .container .box div span {
+        font-size: 0.7rem;
+        font-weight: 300;
+    }
+
+    .container .box div span:nth-child(3) {
+        font-weight: 500;
+        margin-right: 0.2rem;
+    }
+
+    .container .box:hover {
+        box-shadow: 0px 0px 20px 1px #640000;
+        border: 1px solid rgb(227, 79, 79);
+    }
+</style>
+<body class="body">
+<div class="container">
+    <div class="box">
+        <span class="title">TEST SUCCESSFUL</span>
+        <div>
+            <strong>HTML FILE ACQUIRED</strong>
+            <p class="random">0000 000 000 0000</p>
+            <span >VALID</span> <span>01/28</span>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    var randomNum = Math.floor(Math.random()*100000000)
+    var par = document.querySelector(".random")
+    function insertRandom(){
+        par.innerHTML = randomNum;
+    }
+    insertRandom()
+
+</script>
+</html>
