@@ -42,7 +42,7 @@ public class CustomerResource extends Customer{
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    ResponseEntity<?> insertCustomer(@RequestBody Customer newCustomer){
+    ResponseEntity<?> saveCustomer(@RequestBody Customer newCustomer){
         Customer savedCustomer = customerService.createCustomer(newCustomer);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(savedCustomer);
