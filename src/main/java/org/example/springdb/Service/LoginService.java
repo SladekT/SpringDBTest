@@ -29,8 +29,9 @@ public class LoginService {
         return loginRepository.findAll();
     }
 
-    public CustomerLogin updateLoginInfo(CustomerLogin customerLogin){
-        return loginRepository.save(customerLogin);
+    public Integer updateLoginInfo(CustomerLogin customerLogin){
+        loginRepository.save(customerLogin);
+        return 1;
     }
     public CustomerLogin createLoginInfo(CustomerLogin customerLogin){
         return loginRepository.save(customerLogin);

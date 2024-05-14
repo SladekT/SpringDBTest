@@ -11,10 +11,7 @@ import org.example.springdb.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.example.springdb.Model.CustomerLogin;
 
 import java.util.Optional;
@@ -32,10 +29,14 @@ public class LoginResource extends CustomerLogin{
         this.customerService = customerService;
     }
 
-    @RequestMapping(path = "/log/cust.log/{loginId}",
+    @RequestMapping(path = "/log",
     method = RequestMethod.GET)
-    ResponseEntity<LoginDTO> fetchLogin(@PathVariable long loginId){
+    ResponseEntity<LoginDTO> fetchLogin(@RequestParam("loginId")Long loginId){
         return ResponseEntity.ok(loginService.getCustomerLoginById(loginId));
+    }
+    @RequestMapping(path = "/log/update", method = RequestMethod.POST)
+    ResponseEntity<?> updateLogin(@RequestBody CustomerLogin customerLogin){
+        return ResponseEntity.ok(loginService.updateLoginInfo(customerLogin));
     }
 
 
