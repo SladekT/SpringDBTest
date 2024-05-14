@@ -25,9 +25,9 @@ public class Customer {
     public Customer () {
 
     }
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
     private List< CustomerOrders >customerOrders;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
     private List<CustomerLogin> customerLogin;
 
 

@@ -69,6 +69,11 @@ public class CustomerResource extends Customer{
         Optional everything = customerService.findEverything(id);
         return ResponseEntity.ok(everything);
     }
+    @RequestMapping(path = "/delete", method = RequestMethod.DELETE)
+    ResponseEntity<Integer> deleteCustomer(@RequestParam("id")Long id){
+        int result = customerService.deleteCustomer(id);
+        return ResponseEntity.ok(result);
+    }
     @RequestMapping("/")
     public ModelAndView HTML(){
         ModelAndView html = new ModelAndView();

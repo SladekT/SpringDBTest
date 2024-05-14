@@ -64,5 +64,14 @@ public class CustomerService {
             return Optional.of(everything);
     }
 
+    public Integer deleteCustomer(Long id){
+//        orderRepository.deleteAllById(getCustomer(id).getId());
+//        loginRepository.deleteAllByLoginId(id);
+
+        customerRepository.removeAllById(id);
+
+        return 1;
+    }
+
 }
 
